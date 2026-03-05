@@ -1,0 +1,423 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Body and Font */
+/* Body with full animated gradient */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  scroll-behavior: smooth;
+  
+  /* Animated gradient like Contact */
+  background: linear-gradient(135deg, #5b4646, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* ================= NAVBAR ================= */
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10%;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #e0abf5, #e4ddeb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #e8fb59;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+
+
+/* ================= SECTIONS ================= */
+
+section {
+  padding: 120px 10%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* ================= HERO / HOME ================= */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-right: 4px solid #fff; /* cursor */
+  animation: 
+    typing 4s steps(30, end) forwards,  /* type text */
+    blink 0.75s step-end 6 forwards;    /* blink cursor 6 times, then stop */
+}
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Cursor blinking */
+@keyframes blink {
+  0%, 100% { border-color: transparent }
+  50% { border-color: transparent }
+}
+
+/* ================= PROJECTS ================= */
+.projects .section-title {
+  font-family: 'Poppins', sans-serif; /* or any font you like */
+  font-weight: 700;                   /* make it bold */
+  font-size: 3rem;                    /* adjust size */
+  letter-spacing: 2px;                /* optional spacing */
+  color: #fff;                         /* ensure text is readable on gradient */
+  text-transform: uppercase;          /* optional: all caps */
+}
+.project {
+  margin-bottom: 30px; /* Add space between projects */
+}
+
+/* Projects Section */
+.projects {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;  /* full screen height */
+  background: linear-gradient(135deg, #3b3640, #b097b7, #7a9acf, #89c3e3); /* darker gradient */
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #fff;
+  padding: 4rem 10%;
+}
+
+/* Optional overlay for readability */
+.projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35); /* subtle dark overlay for contrast */
+  z-index: 1;
+}
+
+.projects h2, 
+.projects .project-cards {
+  position: relative;
+  z-index: 2;
+}
+
+/* Project buttons match Contact style with slight dark */
+.project-btn {
+  background-color: #7a89a725; /* light but slightly transparent */
+  color: #1f2937;
+  padding: 15px;
+  margin: 10px 0;
+  width: 100%;
+  text-align: left;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s, box-shadow 0.3s;
+}
+
+.project-btn:hover {
+  background-color: #9ba6bbab; /* slightly brighter on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Overlay Background */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image */
+.modal-img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+/* Arrow Icons */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  user-select: none;
+}
+
+.left-arrow {
+  left: 30px;
+}
+
+.right-arrow {
+  right: 30px;
+}
+
+/* Hover Effect */
+.nav-arrow:hover,
+.close-btn:hover {
+  color: #ccc;
+}
+
+
+
+/* ================= ABOUT ================= */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 10%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #5b4646, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #fff;
+  text-align: center;
+}
+
+.about p {
+  max-width: 700px;
+  color: #1f2937; /* dark text for readability on light buttons */
+}
+
+.about-img-container {
+  margin-top: 20px;
+}
+
+.about-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #f3f4f6; /* match button color */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= CONTACT ================= */
+
+/* Section styling */
+/* Section styling */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #5b4646, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #fff;
+  text-align: center;
+}
+
+#contact .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 700px;
+}
+
+/* Contact buttons */
+
+/* Contact buttons */
+.contact-btn {
+  display: flex;           /* icon + text side by side */
+  align-items: center;     /* vertically center icon and text */
+  gap: 0.6rem;             /* spacing between icon and text */
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1f2937;          /* dark text color for contrast */
+  text-decoration: none;
+  background-color: #f3f4f6; /* unified light color */
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+/* Hover effect */
+.contact-btn:hover {
+  background-color: #e5e7eb; /* slightly darker on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Icon inside button */
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;  /* ensure icon stays inline */
+}
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #020617;
+  color: #94a3b8;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #0f172a;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Divider LINE */
+.section-divider {
+  width: 90%; 
+  height: 6px; 
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  margin: 50px auto; 
+  border-radius: 3px;
+}

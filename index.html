@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Jhazz</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>WELCOME TO MY PORTFOLIO</h1>
+    <b class ="typing">HAZEL MAE ARREZA BANDE | BSCS 2A</b>
+  </div>
+</section>
+
+  <div class="section-divider"></div>
+
+  <div id="imageModal" class="modal-overlay">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <span class="nav-arrow left-arrow" onclick="prevImage()">&#10094;</span>
+    <!-- FIXED: container for images/videos -->
+    <div id="modalContainer"></div>
+    <span class="nav-arrow right-arrow" onclick="nextImage()">&#10095;</span>
+  </div>
+
+
+<section id="projects">
+  <h2 class="section-title">PROJECTS</h2>
+
+  <div class="projects-grid">
+
+    <!-- Embedded System -->
+    <div class="project">
+      <button class="project-btn"
+        onclick="openModal(['robot1.png','robot2.png'])">
+        <h3>4WD Robotic Car With Mechanical Arm</h3>
+         <p><br>Our team is bringing this 4WD robotic car to life by collaboratively assembling the mechanical chassis 
+              and programming the articulated arm for full Bluetooth control.</p>
+        <p><br><strong>Subject:</strong> Embedded System</p>
+        <p><strong>Year Level:</strong> 2nd Year 1st Sem.</p>
+      </button>
+    </div>
+
+    <!-- Entrepreneurship -->
+    <div class="project">
+      <button class="project-btn"
+        onclick="openModal(['bc logo.png','bc.png','https://www.youtube.com/embed/aT50pQRf6WQ'])">
+        <h3>Startup Idea: BreatheCube</h3>
+        <p><br>BreatheCube is a modern, minimalist wellness companion designed to help you master your state of mind through the power of breath.
+               You can watch the video pitch on the last slide.</p>
+        <p><br><strong>Subject:</strong> The Entrepreneurial Mind</p>
+        <p><strong>Year Level:</strong> 2nd Year 1st Sem.</p>
+      </button>
+    </div>
+
+    <!-- Programming -->
+    <div class="project">
+      <button class="project-btn"
+        onclick="openModal(['interprog3.png','merge.png','quick.png'])">
+        <h3>Merge vs Quick Sort Algorithms</h3>
+        <p><br>We compare the speed of two sorting algorithms based on input sizes ranging from 100 to 100,000.</p>
+        <p><br><strong>Subject:</strong> Intermediate Programming</p>
+        <p><strong>Year Level:</strong> 1st Year 2nd Sem.</p>
+      </button>
+    </div>
+
+    <!-- Multimedia Video 1 -->
+    <div class="project">
+      <button class="project-btn"
+        onclick="openModal(['https://www.youtube.com/embed/1Hh0yn_W0GE'])">
+        <h3>Types of Film Shots</h3>
+        <p><br>This project involves creating a video showcasing different types of film shots.</p>
+        <p><br><strong>Subject:</strong> Multimedia</p>
+        <p><strong>Year Level:</strong> 1st Year 2nd Sem.</p>
+      </button>
+    </div>
+
+    <!-- Multimedia Video 2 -->
+    <div class="project">
+      <button class="project-btn"
+        onclick="openModal(['https://www.youtube.com/embed/5c4AuD1BsVw'])">
+        <h3>Types of Composition</h3>
+        <p><br>This project is about photographing different types of composition.</p>
+        <p><br>Subject:</strong> Multimedia</p>
+        <p><strong>Year Level:</strong> 1st Year 2nd Sem.</p>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-img-container">
+    <img src="jhazzz.png" alt="My Photo" class="about-img">
+  </div>
+  <p>
+    I find peace in watching sunsets and sunrises, and I cherish moments of solitude surrounded by nature. 
+    As a Pisces, I feel deeply and value the beauty in simple things. One of my favorite quotes, “Be the love you never received,” 
+    really resonates with me, and I could listen to music all day, letting it carry me through every mood and moment.
+  </p>
+  <br>
+  <audio controls>
+    <source src="Sasha Alex Sloan - WTF (Official Video).mp3" type="audio/mpeg">
+  </audio>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact Me</h2>
+  <div class="contact-info">
+
+    <!-- Email Button -->
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=jasshengsheng@gmail.com" 
+   target="_blank"
+   class="contact-btn email-btn">
+  <img src="gmaillogo.png" alt="Email" class="contact-icon"> Email Me
+</a>
+
+    <!-- Phone Button -->
+    <a href="tel:09100733011" class="contact-btn phone-btn">
+      <img src="calllogo.jpg" alt="Phone" class="contact-icon"> Call Me
+    </a>
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/profile.php?id=61572353169442" target="_blank" class="contact-btn fb-btn">
+      <img src="fblogo.png" alt="Facebook" class="contact-icon"> Facebook
+    </a>
+
+    <!-- Instagram Button -->
+    <a href="https://www.instagram.com/ae.ashxz" target="_blank" class="contact-btn ig-btn">
+      <img src="iglogo.png" alt="Instagram" class="contact-icon"> Instagram
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  © Jhaszhm 2026.
+</footer>
+
+<!-- External JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
