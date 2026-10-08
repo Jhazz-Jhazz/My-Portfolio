@@ -15,9 +15,9 @@
 <body>
 
 <header>
-  <nav>
+  <nav aria-label="Main Navigation">
     <div class="logo">Jhazz</div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" id="menuBtn">☰</button>
     <ul id="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -32,22 +32,22 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>WELCOME TO MY PORTFOLIO</h1>
-    <b class ="typing">HAZEL MAE ARREZA BANDE | BSCS 2A</b>
+    <b class="typing">HAZEL MAE ARREZA BANDE | BSCS 2A</b>
   </div>
 </section>
 
-  <div class="section-divider"></div>
+  <div class="section-divider" role="separator"></div>
 
-  <div id="imageModal" class="modal-overlay">
-    <span class="close-btn" onclick="closeModal()">&times;</span>
-    <span class="nav-arrow left-arrow" onclick="prevImage()">&#10094;</span>
+  <div id="imageModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Project Media Viewer">
+    <button class="close-btn" onclick="closeModal()" aria-label="Close modal">&times;</button>
+    <button class="nav-arrow left-arrow" onclick="prevImage()" aria-label="Previous item">&#10094;</button>
     <!-- FIXED: container for images/videos -->
     <div id="modalContainer"></div>
-    <span class="nav-arrow right-arrow" onclick="nextImage()">&#10095;</span>
+    <button class="nav-arrow right-arrow" onclick="nextImage()" aria-label="Next item">&#10095;</button>
   </div>
 
 
-<section id="projects">
+<section id="projects" class="projects">
   <h2 class="section-title">PROJECTS</h2>
 
   <div class="projects-grid">
@@ -55,7 +55,8 @@
     <!-- Embedded System -->
     <div class="project">
       <button class="project-btn"
-        onclick="openModal(['robot1.png','robot2.png'])">
+        onclick="openModal(['robot1.png','robot2.png'])"
+        aria-label="View details for 4WD Robotic Car With Mechanical Arm">
         <h3>4WD Robotic Car With Mechanical Arm</h3>
          <p><br>Our team is bringing this 4WD robotic car to life by collaboratively assembling the mechanical chassis 
               and programming the articulated arm for full Bluetooth control.</p>
@@ -67,7 +68,8 @@
     <!-- Entrepreneurship -->
     <div class="project">
       <button class="project-btn"
-        onclick="openModal(['bc logo.png','bc.png','https://www.youtube.com/embed/aT50pQRf6WQ'])">
+        onclick="openModal(['bc logo.png','bc.png','https://www.youtube.com/embed/aT50pQRf6WQ'])"
+        aria-label="View details for Startup Idea: BreatheCube">
         <h3>Startup Idea: BreatheCube</h3>
         <p><br>BreatheCube is a modern, minimalist wellness companion designed to help you master your state of mind through the power of breath.
                You can watch the video pitch on the last slide.</p>
@@ -79,7 +81,8 @@
     <!-- Programming -->
     <div class="project">
       <button class="project-btn"
-        onclick="openModal(['interprog3.png','merge.png','quick.png'])">
+        onclick="openModal(['interprog3.png','merge.png','quick.png'])"
+        aria-label="View details for Merge vs Quick Sort Algorithms">
         <h3>Merge vs Quick Sort Algorithms</h3>
         <p><br>We compare the speed of two sorting algorithms based on input sizes ranging from 100 to 100,000.</p>
         <p><br><strong>Subject:</strong> Intermediate Programming</p>
@@ -90,7 +93,8 @@
     <!-- Multimedia Video 1 -->
     <div class="project">
       <button class="project-btn"
-        onclick="openModal(['https://www.youtube.com/embed/1Hh0yn_W0GE'])">
+        onclick="openModal(['https://www.youtube.com/embed/1Hh0yn_W0GE'])"
+        aria-label="View details for Types of Film Shots">
         <h3>Types of Film Shots</h3>
         <p><br>This project involves creating a video showcasing different types of film shots.</p>
         <p><br><strong>Subject:</strong> Multimedia</p>
@@ -101,10 +105,11 @@
     <!-- Multimedia Video 2 -->
     <div class="project">
       <button class="project-btn"
-        onclick="openModal(['https://www.youtube.com/embed/5c4AuD1BsVw'])">
+        onclick="openModal(['https://www.youtube.com/embed/5c4AuD1BsVw'])"
+        aria-label="View details for Types of Composition">
         <h3>Types of Composition</h3>
         <p><br>This project is about photographing different types of composition.</p>
-        <p><br>Subject:</strong> Multimedia</p>
+        <p><br><strong>Subject:</strong> Multimedia</p>
         <p><strong>Year Level:</strong> 1st Year 2nd Sem.</p>
       </button>
     </div>
@@ -112,26 +117,28 @@
   </div>
 </section>
 
-<div class="section-divider"></div>
+<div class="section-divider" role="separator"></div>
 
 <!-- ABOUT -->
 <section id="about" class="about">
   <h2 class="section-title">About Me</h2>
   <div class="about-img-container">
-    <img src="jhazzz.png" alt="My Photo" class="about-img">
+    <img src="jhazzz.png" alt="Photo of Hazel Mae Arreza Bande" class="about-img">
   </div>
   <p>
-    I find peace in watching sunsets and sunrises, and I cherish moments of solitude surrounded by nature. 
-    As a Pisces, I feel deeply and value the beauty in simple things. One of my favorite quotes, “Be the love you never received,” 
-    really resonates with me, and I could listen to music all day, letting it carry me through every mood and moment.
+    I find peace in sunsets, sunrises, and quiet moments surrounded by nature. 
+    As a Pisces, I feel deeply and find beauty in the simplest things. 
+    “Be the love you never received” is a quote that truly resonates with me. 
+    And music? I could listen to it all day— it’s my comfort, my escape, and the soundtrack to every mood and moment.
   </p>
   <br>
-  <audio controls>
+  <audio controls aria-label="Audio player for background music">
     <source src="Sasha Alex Sloan - WTF (Official Video).mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
 </section>
 
-<div class="section-divider"></div>
+<div class="section-divider" role="separator"></div>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -139,25 +146,26 @@
   <div class="contact-info">
 
     <!-- Email Button -->
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=jasshengsheng@gmail.com" 
-   target="_blank"
-   class="contact-btn email-btn">
-  <img src="gmaillogo.png" alt="Email" class="contact-icon"> Email Me
-</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jasshengsheng@gmail.com" 
+       target="_blank"
+       rel="noopener noreferrer"
+       class="contact-btn email-btn">
+      <img src="gmaillogo.png" alt="" class="contact-icon" aria-hidden="true"> Email Me
+    </a>
 
     <!-- Phone Button -->
     <a href="tel:09100733011" class="contact-btn phone-btn">
-      <img src="calllogo.jpg" alt="Phone" class="contact-icon"> Call Me : 09100733011
+      <img src="calllogo.jpg" alt="" class="contact-icon" aria-hidden="true"> Call Me : 09100733011
     </a>
 
     <!-- Facebook Button -->
-    <a href="https://www.facebook.com/profile.php?id=61572353169442" target="_blank" class="contact-btn fb-btn">
-      <img src="fblogo.png" alt="Facebook" class="contact-icon"> Facebook
+    <a href="https://www.facebook.com/jhaszhm" target="_blank" rel="noopener noreferrer" class="contact-btn fb-btn">
+      <img src="fblogo.png" alt="" class="contact-icon" aria-hidden="true"> Facebook
     </a>
 
     <!-- Instagram Button -->
-    <a href="https://www.instagram.com/ae.ashxz" target="_blank" class="contact-btn ig-btn">
-      <img src="iglogo.png" alt="Instagram" class="contact-icon"> Instagram
+    <a href="https://www.instagram.com/squadron2k21" target="_blank" rel="noopener noreferrer" class="contact-btn ig-btn">
+      <img src="iglogo.png" alt="" class="contact-icon" aria-hidden="true"> Instagram
     </a>
 
   </div>
